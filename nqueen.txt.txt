@@ -1,0 +1,44 @@
+def is_safe(board, row, col, n):
+
+    for i in range(row):
+
+        # Check same column
+        if board[i] == col:
+            return False
+
+        # Check diagonal
+        if abs(board[i] - col) == abs(i - row):
+            return False
+
+    return True
+
+
+def solve_nqueens(board, row, n):
+
+    # Base condition
+    if row == n:
+        print(board)
+        return
+
+    # Try all columns
+    for col in range(n):
+
+        if is_safe(board, row, col, n):
+
+            # Place queen
+            board[row] = col
+
+            # Recursive call
+            solve_nqueens(board, row + 1, n)
+
+            # Backtracking
+            board[row] = -1
+
+
+n = int(input("Enter value of N: "))
+
+board = [-1] * n
+
+print("Solutions are:")
+
+solve_nqueens(board, 0, n)

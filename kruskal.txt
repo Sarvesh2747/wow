@@ -1,0 +1,56 @@
+def find(parent, i):
+
+    while parent[i] != i:
+        i = parent[i]
+
+    return i
+
+
+def union(parent, x, y):
+
+    xset = find(parent, x)
+    yset = find(parent, y)
+
+    parent[xset] = yset
+
+
+def kruskal(vertices, edges):
+
+    edges = sorted(edges, key=lambda item: item[2])
+
+    parent = []
+
+    for node in range(vertices):
+        parent.append(node)
+
+    mst = []
+
+    for u, v, w in edges:
+
+        x = find(parent, u)
+        y = find(parent, v)
+
+        if x != y:
+
+            mst.append((u, v, w))
+            union(parent, x, y)
+
+    return mst
+
+
+vertices = int(input("Enter number of vertices: "))
+
+e = int(input("Enter number of edges: "))
+
+edges = []
+
+for i in range(e):
+
+    u = int(input("Enter source vertex: "))
+    v = int(input("Enter destination vertex: "))
+    w = int(input("Enter weight: "))
+
+    edges.append((u, v, w))
+
+
+print("MST:", kruskal(vertices, edges))

@@ -1,0 +1,57 @@
+def dijkstra(graph, start):
+
+    dist = {}
+    visited = {}
+
+    for node in graph:
+        dist[node] = 9999
+        visited[node] = False
+
+    dist[start] = 0
+
+    for _ in range(len(graph)):
+
+        min_node = None
+        min_dist = 9999
+
+        for node in graph:
+
+            if not visited[node] and dist[node] < min_dist:
+                min_dist = dist[node]
+                min_node = node
+
+        visited[min_node] = True
+
+        for neighbor in graph[min_node]:
+
+            new_dist = dist[min_node] + graph[min_node][neighbor]
+
+            if new_dist < dist[neighbor]:
+                dist[neighbor] = new_dist
+
+    return dist
+
+
+graph = {}
+
+n = int(input("Enter number of nodes: "))
+
+for i in range(n):
+
+    node = input("Enter node name: ")
+
+    graph[node] = {}
+
+    e = int(input("Enter number of neighbors: "))
+
+    for j in range(e):
+
+        neighbor = input("Enter neighbor: ")
+        weight = int(input("Enter weight: "))
+
+        graph[node][neighbor] = weight
+
+
+start = input("Enter starting node: ")
+
+print("Shortest Path:", dijkstra(graph, start))

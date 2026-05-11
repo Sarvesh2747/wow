@@ -1,0 +1,45 @@
+def prim(graph, n):
+
+    selected = []
+    selected.append(0)
+
+    no_edge = 0
+
+    print("Edge : Weight")
+
+    while no_edge < n - 1:
+
+        minimum = 9999
+        x = 0
+        y = 0
+
+        for i in selected:
+
+            for j in range(n):
+
+                if j not in selected and graph[i][j]:
+
+                    if minimum > graph[i][j]:
+
+                        minimum = graph[i][j]
+                        x = i
+                        y = j
+
+        print(x, "-", y, ":", graph[x][y])
+
+        selected.append(y)
+        no_edge += 1
+
+
+n = int(input("Enter number of vertices: "))
+
+graph = []
+
+print("Enter adjacency matrix:")
+
+for i in range(n):
+
+    row = list(map(int, input().split()))
+    graph.append(row)
+
+prim(graph, n)

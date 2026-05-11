@@ -1,0 +1,58 @@
+def chatbot():
+    print("Welcome! Type 'exit' to stop.")
+
+    while True:
+        user = input("You: ").lower()
+
+        if user == "exit":
+            print("Bot: Goodbye!")
+            break
+        elif "hello" in user:
+            print("Bot: Hello! How can I help you?")
+        elif "price" in user:
+            print("Bot: Prices vary. Please specify item.")
+        elif "order" in user:
+            print("Bot: Your order is being processed.")
+        else:
+            print("Bot: Sorry, I didn't understand.")
+
+chatbot()
+
+
+
+def chatbot():
+
+    responses = {
+
+        "hello": "Hello! How can I help you?",
+        "price": "Prices vary. Please specify item.",
+        "order": "Your order is being processed.",
+        "bye": "Goodbye!"
+    }
+
+    print("Welcome! Type 'exit' to stop.")
+
+    while True:
+
+        user = input("You: ").lower()
+
+        if user == "exit":
+            print("Bot: Goodbye!")
+            break
+
+        found = False
+
+        for key in responses:
+
+            if key in user:
+
+                print("Bot:", responses[key])
+
+                found = True
+                break
+
+        if not found:
+            print("Bot: Sorry, I didn't understand.")
+
+
+chatbot()
