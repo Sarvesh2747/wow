@@ -55,3 +55,19 @@ for i in range(n):
 start = input("Enter starting node: ")
 
 print("Shortest Path:", dijkstra(graph, start))
+
+Enter number of nodes: 4
+
+Node A:
+Neighbors: B 1, C 4
+
+Node B:
+Neighbors: A 1, C 2, D 5
+
+Node C:
+Neighbors: A 4, B 2, D 1
+
+Node D:
+Neighbors: B 5, C 1
+
+Enter starting node: A
