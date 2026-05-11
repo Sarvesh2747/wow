@@ -95,3 +95,18 @@ goal = tuple(map(int, input("Enter goal position: ").split()))
 path = astar(grid, start, goal)
 
 print("Shortest Path:", path)
+
+
+Enter rows: 3
+Enter columns: 3
+
+Enter grid values:
+0 0 0
+1 1 0
+0 0 0
+
+Enter start position:
+0 0
+
+Enter goal position:
+2 2
