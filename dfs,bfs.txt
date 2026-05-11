@@ -89,3 +89,23 @@ g.dfs(start, visited)
 
 print("\nBFS Traversal:")
 g.bfs(start)
+
+Enter number of edges: 4
+
+Enter edge 1
+Enter first vertex: 0
+Enter second vertex: 1
+
+Enter edge 2
+Enter first vertex: 0
+Enter second vertex: 2
+
+Enter edge 3
+Enter first vertex: 1
+Enter second vertex: 3
+
+Enter edge 4
+Enter first vertex: 2
+Enter second vertex: 4
+
+Enter starting vertex: 0
