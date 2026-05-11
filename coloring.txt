@@ -53,3 +53,20 @@ m = int(input("Enter number of colors: "))
 color = [0] * n
 
 graph_coloring(graph, m, color, 0, n)
+
+
+Enter number of vertices: 4
+
+Vertex 0 neighbors:
+1 2
+
+Vertex 1 neighbors:
+0 2
+
+Vertex 2 neighbors:
+0 1 3
+
+Vertex 3 neighbors:
+2
+
+Enter number of colors: 3
